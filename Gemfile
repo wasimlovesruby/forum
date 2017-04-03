@@ -30,7 +30,7 @@ end
 
 group :production do
 	gem 'pg'
-	gem '12 factor_rails'
+	gem 'rails_12factor'
 end
 
 group :development, :test do
