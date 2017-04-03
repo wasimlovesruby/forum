@@ -10,7 +10,6 @@ gem 'haml', '~> 4.0', '>= 4.0.7'
 gem 'devise', '~> 4.2'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rails', '~> 5.0.2'
-gem 'sqlite3'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -29,3 +28,11 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+group :production do
+	gem 'pg'
+	gem '12 factor_rails'
+end
+
+group :development, :test do
+	gem 'sqlite3'
+end
