@@ -1,0 +1,26 @@
+!!!
+%html
+%head
+	%title WWF | Wasi's World Forum
+	= csrf_meta_tags
+	= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+	%link{ rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Economica", type: "text/css"}
+	%link{ rel: "stylesheet", :href => "https://cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.min.css.map"}
+	= javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+%body
+	%header.main_header.clearfix
+		.wrapper
+			#logo
+				%p= link_to "Wasi's World Forum", root_path 
+			#button
+				- if user_signed_in?			
+					= link_to "New Post", new_post_path
+				-else
+					= link_to "sign In", new_user_session_path
+					= link_to "sign Up", new_user_registration_path
+	.wrapper
+		%p.notice= notice
+		%p.alert= alert
+
+	.wrapper
+		= yield
